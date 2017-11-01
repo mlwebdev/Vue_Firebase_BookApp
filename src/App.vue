@@ -117,7 +117,13 @@ export default {
       },
       methods: {
         addBook: function() {
-          booksRef.push(this.newBook);
+          if(this.newBook.title != ' '){
+            if(this.newBook.author != ' '){
+              if(this.newBook.url != ' '){
+                  booksRef.push(this.newBook);
+              }
+            }
+          }
           this.newBook.title = ' ';
           this.newBook.author = ' '
           this.newBook.url = ' '
